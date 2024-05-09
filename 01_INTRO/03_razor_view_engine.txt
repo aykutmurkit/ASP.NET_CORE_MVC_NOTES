@@ -1,0 +1,10 @@
+
+view dsoyalarını tarayıcnın anlayacağı html dosyalarına çevirir.
+
+
+razor syntaxını 
+
+@{
+
+}
+

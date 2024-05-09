@@ -1,0 +1,7 @@
+Kullanıcılar bir istek yaptığı zaman ilk istek controllera gelir
+
+veritabanına gidecektse model katmanına gider.
+
+Model katmanında ilkgili datayı alır gelen isteği view katmanına iletir.
+
+

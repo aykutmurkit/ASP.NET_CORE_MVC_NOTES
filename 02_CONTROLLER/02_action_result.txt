@@ -1,0 +1,42 @@
+
+bir action methodlarından sadece sayfa dönülmez 
+
+farklı farklı veri tipleri de dönebilir.
+
+    --> ActionResult (view dönmeye actionResult olarak adlandırabilirz.)
+    --> ContentResult (string ifade dönmek istediğimde)
+    --> JsonResult (özellikle ajax isteklerinde kullanılıyor.)
+    --> EmptyResult (geriye hiçbir şey dönmek istemediğimizde ki dönüş tipi)
+
+    namespace Test.Web.Controllers
+{
+    public class OrnekController : Controller
+    {
+        // Bu bir ActionResult'dır
+        public IActionResult Index()
+        {
+            return View();
+        }
+        // bir contentresult yazalım
+        //bunu da url ye yazarsan sana bir string döner sadece
+        //https://localhost:44332/Ornek/contentresult yazarsan gelir .
+        public IActionResult ContentResult()
+        {
+            return Content("ContentResult");
+        }
+
+        //https://localhost:44332/Ornek/jsonresult
+        public IActionResult JsonResult()
+        {
+            return Json(new {Id=1,name="kalem"}); // isimsiz bir class oluşturuyoruz.
+        }
+
+        //hiçbir şey dönmüyorum.
+        public IActionResult EmptyResult()
+        {
+            return new EmptyResult(); 
+        }
+    }
+}
+
+

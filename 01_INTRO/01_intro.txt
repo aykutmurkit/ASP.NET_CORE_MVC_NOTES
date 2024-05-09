@@ -1,0 +1,96 @@
+
+MVC Tasarım Deseni
+
+yazılım dünyasında tasarım düzeni, birbirine benzeyen sorunlara çözüm üretilen yönteme verilen ad diyebiliriz.
+
+M - Model
+V - View
+C - Controller
+
+MVC tasarım deseni "Separation of consern" presnsibini uygular.
+
+"ilgili kodun ilgili yerde bulunması gibi diyebilirsin."
+
+
+
+create new project derken mvc yazacaksın .
+
+asp.net core web app (model-view-controller) a tıkla 
+
+
+bir proje yazdıktansonra .koyarak tipini belli etmek bir bestpracticetir.
+
+örnek:
+
+    Project name: MyAspNetCoreApp.Web gibi
+    Solution name : MyAspNetCoreApp
+
+
+Solution Explorer kısmı
+
+    --> Connected Services
+
+        uygulama üzerinden third party servislere bağlabiliyoruz.
+
+
+    --> Dependencies 
+
+        kütüphaneleri ve frameworkleri eklediğimiz yer
+
+    --> Properties 
+
+        lounchSettings.json isminde bir dosya var içinde
+        Uygulamanın nasıl ayağa kalkacağı hakkında bir dosya.
+
+        asp.net core iki tane sunucu kullanabilir biri iis diğer kestrel
+
+    --> wwwroot
+
+        tüm statik dosyaları burada barındırıyoruz.
+        html css video resim hepsini burada tanımlıyoruz.
+        template ile beraber otomatik olarak bootsrap ve jquesy kütüphanesi gelmiş.
+
+
+    --> controller
+
+        request'in ilk geldiği controllerlara geliyor burada oluyorlar.
+        tüm controller burada toplanır.
+
+    --> Models
+
+        tüm business kodları burada buluyor ve veri tabanı ile buradan iletişim kuruyorz.
+
+    --> Views 
+
+        Kullanıcıya gözükecek olan ui'lar burada tasarlanır.
+
+
+    --> appsettings.json 
+
+        uygulamanın veritabanı bağlantı yolları
+        sms göndermek için keyler
+        facebooka bağlanmak için keyler
+        uygulamanın statik yollarını buraya yazarız
+        redis yolu mesela 
+        default olarak loglama ile ilgili json kodlar burada
+
+        veritabanı yollarını kod içinde barındırmayacağız
+
+    --> Program.cs 
+
+        Uygulamanın ayağa kalktığı dosya.
+
+        veritabanına bağlanmak için ayarı burdan yapıyoruz
+        session ayarları
+        üyelik sisteminin genel ayarlarını burada belirtiyoruz.
+
+
+
+    https kullan bestpractice
+
+    .net 6 ile beraber main method kalkmış.
+
+
+
+
+

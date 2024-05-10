@@ -1,0 +1,2 @@
+Viewbag ve viewdata ile veri taşırken actionmethod ile view aynı olmalı 
+

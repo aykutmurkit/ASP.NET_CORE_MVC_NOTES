@@ -1,0 +1,2 @@
+bir action methodtan diper bir action methoda veri taşıma için kullanılırmış
+

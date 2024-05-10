@@ -1,0 +1,9 @@
+hacimli dataları taşımak için kullanıyoruz.
+
+tablo doldurmak için gibi.
+
+
+daha fazla actionmethodlar için dönüş tipi var bu arada
+
+4 tane veri taşıma yöntemi vardı.
+

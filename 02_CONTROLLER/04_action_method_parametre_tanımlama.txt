@@ -1,0 +1,7 @@
+action methodlar default olarak id alabilir.
+
+soru işareti ise olabilir de olmayabilir de demektir
+
+soru işareti kaldırsan bu id yi vermen gerekebilir.
+
+{controller=Ornek}/{action=Index}/{id?}");

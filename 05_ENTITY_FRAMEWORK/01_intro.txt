@@ -1,0 +1,71 @@
+--> Entity Framework Core
+ 
+    Hafif,Genişletilebilir ve open-source olan veri erişim yöntemidir.
+
+--> ORM 
+
+    Object Relational Mapping
+
+--> LINQ
+
+    EF CORE de sorguları yazarken LINQ (language Integrated query) kullanılır.
+    linq ile tip güvenli bir şekilde sorgu yapabiliyoruz. derleyici çalışmadan bizi uyarıyor yani 
+
+        - LINQ to Object Collection
+
+            memoryde tutulan liste array gibi şeylerde sorgular yazabiliyoruz.
+
+        - LINQ to XML
+
+            xml dosya içinde sorgular için 
+
+        - LINQ to Entities
+
+            veri tabanında tablo olarak karşılığı olan classlar ile sorgular yazılır.
+
+    not: ham sql cümleleri de yazabiliriz ancak.
+
+
+--> SQL SERVER VERİ TABANINA BAĞLANMA
+
+    view kısmından sql server menagement explorer açıyoruz ve veritabanımızı bağlıyoruz sonra bağlandığımız
+    veritabanını refresh edip properties diyoruz.sonra sağ altta olan kısımdan connection stringi alıyoruz.
+    bunu appsettings.json dosyasına yapıştıroyruz.
+
+    {
+     "ConnectionStrings": {
+     "SqlCon": "Data Source=RIDDLER;Initial Catalog=TurkcellDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False"
+    },
+
+    - DbContext sınıfının oluşturulması
+
+    prop kısıltma 
+    ctor kısaltma konstructor
+
+    using Microsoft.EntityFrameworkCore;
+
+namespace Test.Web.Models
+{
+
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options): base (options)
+        {
+            
+        }
+        // Products tablodaki isim farklı bir isim kullanmak istersen
+        //entity nesnesine gidip[Table("Products")]; demen lazım custom isim vermek için detaylı bakarsın
+
+
+        public DbSet<Product> Products { get; set; }
+    }
+}
+
+daha sonra program cs e gelip bunu başlatmamız lazım
+
+builder.Services.AddDbContext<AppDbContext>(
+    options =>
+    {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("SqlCon"));
+    }
+);

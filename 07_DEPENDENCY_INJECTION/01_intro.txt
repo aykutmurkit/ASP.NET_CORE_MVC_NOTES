@@ -1,0 +1,40 @@
+
+--> Dependency Injection bir design patterndır.
+
+    Bir yazılımın ihtiyaç duyduğu bağımlılıkların dışardan enjekte edilmesine imkan sağlamak.
+
+    iki tane önemli presibi vardır.
+
+    - Inversion Of Control principle
+    - Dependecy Inversion principle
+
+    uygulamaları geliştirirken mümkün olduğu kadar gevşek uygulamalar geliştir.
+
+--> Asp.net Core (IOC/DI) Container
+
+    Dependency Object -> Interface or abstract class -> dependent Object
+
+    DAL Class -> IDAL Interface -> A Controller
+
+    DAL (data access layer)
+
+    Nesneleri enjekte ederken yaşam döngüsünü ayarlayabileceğimiz yapılar
+
+        ->Singleton 
+
+            Tek bir nesne oluşturma üzerinden olay yürütülüyor. Bir kere üretiliyor ve sürekli o nesne kullanılıyor.
+            Uygulama ayağa kalkarken nesne oluşuyor.
+
+            singleton kullandığımız helper sınıflarında veritabanı bağlantısı yapmamamız lazım.
+
+            yardımcı methodlarda kullanabilirsin.
+
+         ->Scoped
+
+            request geldiğinde Helper sınıfından bir nesne üretiyor daha sonra response gelene kadar hep aynı helper sınıfı kullanılır.
+            veritabanı, servisler ile ilgili kodları scoped yaparız.
+
+         ->Transient
+
+            Bir classın her constructorında yada methodunda her karşılaştığında tekrar bir nesne örneği üretiyor.
+            request response döndüğü an tüm nesne örneklerini siliyor.
